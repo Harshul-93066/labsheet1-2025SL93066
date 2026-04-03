@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/username/labsheet1-2025SL93066.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'echo Building Application'
+                sh 'python3 --version'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'python3 calculator.py'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'echo Deployment Stage'
+            }
+        }
+    }
+}
