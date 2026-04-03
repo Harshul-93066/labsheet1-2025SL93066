@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/Harshul-93066/labsheet1-2025SL93066.git'
+                checkout scm
             }
         }
 
